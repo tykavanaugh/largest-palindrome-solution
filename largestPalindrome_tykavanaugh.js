@@ -22,28 +22,16 @@ isPalindrome = (num) => {
 
 exports.getLargestPalindrome = (N) => {
 
-  let largestPalindrome = 0;
-
   // iterate through range of multiplicands
-  for (let i = 10 ** (N - 1); i < 10 ** N; i++) {
-      
-    for (let j = 10 ** (N - 1); j < 10 ** N; j++) {
+  const max = (10 ** (N)-1) * (10 ** (N)-1)
+  console.log(max)
+  for (let i = max; i > 900000; i--) {
 
-      // check if the product is a palindrome
-      if (isPalindrome(i * j)) {
-
-        // check if it's larger than our largest palindrome
-        if (i * j > largestPalindrome) {
-                  
-          // update largest palindrome
-          largestPalindrome = i * j;
-        }
-      }
+    // check if the product is a palindrome
+    if (isPalindrome(i)) {
+      console.log(i)
     }
   }
-
-  // return result
-  return largestPalindrome;
 }
 
 // input
